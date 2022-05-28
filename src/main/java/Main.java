@@ -9,7 +9,10 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Please enter the map: ");
         String map = scanner.nextLine();
+        System.out.println("Please enter the race: ");
         String race = scanner.next();
 
         SettingsReader reader = new SettingsReaderFromFile("src/main/resources/settings.json");

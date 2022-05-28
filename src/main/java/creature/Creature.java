@@ -10,13 +10,12 @@ public class Creature {
      * Key: field's name.
      * Value: field's cost.
      */
-    private static Map<String, Integer> costs;
-    private final Creature creature = null;
+    private final Map<String, Integer> costs;
     Creature(final Map<String, Integer> costs) {
-        Creature.costs = costs;
+        this.costs = costs;
     }
 
-    public int getCosts(String key) {
+    public int getCosts(final String key) {
         return costs.get(key);
     }
 

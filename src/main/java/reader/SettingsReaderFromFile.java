@@ -16,7 +16,7 @@ public class SettingsReaderFromFile implements SettingsReader {
 
     String path;
 
-    public SettingsReaderFromFile(String path) {
+    public SettingsReaderFromFile(final String path) {
         this.path = path;
     }
 

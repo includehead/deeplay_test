@@ -12,7 +12,7 @@ public class CreatureCreator {
      * @param race contains race of Creature
      * @return Creature
      */
-    public static Creature create (SettingsReader reader, String race) {
+    public static Creature create (final SettingsReader reader, final String race) {
 
         if ("".equals(race)) {
             throw new IllegalArgumentException("Race is not provided.");
@@ -24,12 +24,8 @@ public class CreatureCreator {
             throw new IllegalArgumentException("There is no such a race.");
         }
 
-        Integer[] values = map.values().toArray(new Integer[0]);
-
-        for (Integer col: values) {
-            if (col < 0) {
-                throw new IllegalArgumentException("Wrong setting (path should not be negative");
-            }
+        if (map.values().stream().anyMatch(v -> v < 0)) {
+            throw new IllegalArgumentException("Wrong setting (cost should not be negative)");
         }
 
         return new Creature(map);
